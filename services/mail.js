@@ -1,4 +1,6 @@
 import nodemailer from 'nodemailer';
+import env from "dotenv"
+env.config();
 function mail(Forminfo) {
     let flag = false;
     var transporter = nodemailer.createTransport({
@@ -7,12 +9,15 @@ function mail(Forminfo) {
         port: 587,
         secure: true,
         auth: {
+            // user: process.env.Email,
             user: 'vaibhav.aurasoft@gmail.com',
-            pass: 'avjulakvbjgyfdmg'
+            // pass: `${process.env.password}`,
+             pass:'avjulakvbjgyfdmg'
         }
     });
+    console.log(process.env.Email,process.env.password)
     var mailOptions = {
-        from: '" <isai.thompson93@ethereal.email>',
+        from: process.env.Email,
         to: "vishal.aurasoft@gmail.com",
         subject: Forminfo?.Subject,
         text: "Enquiry Submited",
@@ -21,9 +26,7 @@ function mail(Forminfo) {
         <p>Name:-${Forminfo.Name}</p>
     <p>E-mail:-${Forminfo.Email}</p>
     <p>Contact Number:-${Forminfo.ContactNumber}</p>
-    <p>${Forminfo.Course ? "Course:-" + Forminfo.Course : "Service:-" + Forminfo.Service}</p>
-
-    `
+    <p>${Forminfo.Course ? "Course:-" + Forminfo.Course : "Service:-" + Forminfo.Service}</p>    `
     };
 
     transporter.sendMail(mailOptions, function (error, info) {
