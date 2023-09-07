@@ -1,5 +1,6 @@
 import nodemailer from 'nodemailer';
 import env from "dotenv"
+
 env.config();
 function mail(to,Forminfo) {
     let flag = false;
