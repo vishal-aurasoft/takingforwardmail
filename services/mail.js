@@ -24,10 +24,10 @@ function mail(to,Forminfo) {
         text: "Enquiry Submited",
         html: `<a href=${Forminfo.Course ? "https://aurasoftsolutions.com/taking-forward/" : "https://aurasoftsolutions.com/taking-forward/contactus.html?"}>This is a enquiry from ${Forminfo.Course ? "Course" : "Service"} form</a>
         <br/>
-        <p>Name:-${Forminfo.Name}</p>
-    <p>E-mail:-${Forminfo.Email}</p>
-    <p>Contact Number:-${Forminfo.ContactNumber}</p>
-    <p>${Forminfo.Course ? "Course:-" + Forminfo.Course : "Service:-" + Forminfo.Service}</p>    `
+        <p>Name :- ${Forminfo.Name}</p>
+    <p>E-mail :- ${Forminfo.Email}</p>
+    <p>Contact Number :- ${Forminfo.ContactNumber}</p>
+    <p>${Forminfo.Course ? "Course :- "  + Forminfo.Course : "Service :- " + Forminfo.Service}</p>    `
     };
 
     transporter.sendMail(mailOptions, function (error, info) {
