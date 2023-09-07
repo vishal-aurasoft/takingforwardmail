@@ -1,7 +1,7 @@
 import nodemailer from 'nodemailer';
 import env from "dotenv"
 env.config();
-function mail(Forminfo) {
+function mail(to,Forminfo) {
     let flag = false;
     var transporter = nodemailer.createTransport({
         host: 'smtp.gmail.com',
@@ -18,7 +18,7 @@ function mail(Forminfo) {
     console.log(process.env.Email,process.env.password)
     var mailOptions = {
         from: process.env.Email,
-        to: "vishal.aurasoft@gmail.com",
+        to: to,
         subject: Forminfo?.Subject,
         text: "Enquiry Submited",
         html: `<a href=${Forminfo.Course ? "https://aurasoftsolutions.com/taking-forward/" : "https://aurasoftsolutions.com/taking-forward/contactus.html?"}>This is a enquiry from ${Forminfo.Course ? "Course" : "Service"} form</a>
