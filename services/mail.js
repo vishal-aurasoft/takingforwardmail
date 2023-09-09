@@ -22,7 +22,7 @@ function mail(to,Forminfo) {
         to: to,
         subject: Forminfo?.Subject,
         text: "Enquiry Submited",
-        html: `<a href=${Forminfo.Course ? "https://aurasoftsolutions.com/taking-forward/" : "https://aurasoftsolutions.com/taking-forward/contactus.html?"}>This is a enquiry from ${Forminfo.Course ? "Course" : "Service"} form</a>
+        html: `<a href=${Forminfo.Course ? "https://aurasoftsolutions.com/taking-forward/" : "https://aurasoftsolutions.com/taking-forward/contactus.html?"}>It's an enquiry from ${Forminfo.Course ? "Course" : "Service"} form</a>
         <br/>
         <p>Name :- ${Forminfo.Name}</p>
     <p>E-mail :- ${Forminfo.Email}</p>
