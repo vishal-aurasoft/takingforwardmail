@@ -11,14 +11,14 @@ function mail(to,Forminfo) {
         secure: true,
         auth: {
             // user: process.env.Email,
-            user: 'vaibhav.aurasoft@gmail.com',
+            user: 'info.takingforward@gmail.com',
             // pass: `${process.env.password}`,
-             pass:'avjulakvbjgyfdmg'
+             pass:'tbwliddkbsdewspq'
         }
     });
     console.log(process.env.Email,process.env.password)
     var mailOptions = {
-        from: process.env.Email,
+        from: "info.takingforward@gmail.com",
         to: to,
         subject: Forminfo?.Subject,
         text: "Enquiry Submited",
