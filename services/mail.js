@@ -11,9 +11,9 @@ function mail(to,Forminfo) {
         secure: true,
         auth: {
             // user: process.env.Email,
-            user: 'vaibhav.aurasoft@gmail.com',
+            user: 'info.takingforward@gmail.com',
             // pass: `${process.env.password}`,
-             pass:'avjulakvbjgyfdmg'
+             pass:'tbwliddkbsdewspq'
         }
     });
     console.log(process.env.Email,process.env.password)
